@@ -3,7 +3,7 @@ PHP
 
 #Detail
 favoriteslist.php
--フォローリストの取得
+-ホームタイムライン上のフォローリストの取得
 
 
 #Copyright
