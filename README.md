@@ -3,7 +3,6 @@ PHP
 
 #Detail
 favoriteslist.php - 特定ユーザのフォロー情報の取得
-
 followersids.php - 特定ユーザのフォロワーIDの取得
 
 followerslist.php - 特定ユーザのフォロワー情報の取得
