@@ -3,7 +3,7 @@ PHP
 
 #Detail
 
-##Follower
+###Follower
 
 followersids.php - 特定ユーザのフォロワーIDの取得
 
@@ -11,19 +11,19 @@ followerslist.php - 特定ユーザのフォロワー情報の取得
 
 followerstweets.php - 特定ユーザのフォロワーのtweetの取得
 
-##Follow
+###Follow
 
 favoriteslist.php - 特定ユーザのフォロー情報の取得
 
 friendsids.php　- 特定ユーザのフォローIDの取得
 
-##Myself
+###Myself
 
 hometimeline.php - ホームタイムラインの取得
 
 mytweets.php - 自分自身(特定ユーザ)の情報の取得
 
-##Search
+###Search
 
 hashtag.php - ハッシュタグを指定したtweetの検索
 
