@@ -1,5 +1,5 @@
-# TwitterAPI1.1
-PHP
+# TwitterAPI
+version1.1
 
 #Detail
 
