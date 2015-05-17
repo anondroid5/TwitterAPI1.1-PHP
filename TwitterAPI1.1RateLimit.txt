@@ -1,0 +1,141 @@
+Twitter API 1.1 の現行APIの制限
+(REST API v1.1 Limits per window by resource)
+https://dev.twitter.com/docs/rate-limiting/1.1/limits
+
+・15分辺り最大何回実行できるか
+
+Timelines
+  GET statuses/mentions_timeline          15回
+  GET statuses/user_timeline             180回/user, 300回/application
+  GET statuses/home_timeline              15回
+  GET statuses/retweets_of_me             15回
+
+Tweets
+  GET statuses/retweets/:id              15回/user,  60回/application
+  GET statuses/show/:id                 180回/user, 180回/application
+  POST statuses/destroy/:id              制限なし
+  POST statuses/update                   制限なし (このAPIの実行回数自体の制限はないが、1ユーザー辺りの投稿数の制限はある)
+  POST statuses/retweet/:id              制限なし (このAPIの実行回数自体の制限はないが、1ユーザー辺りの投稿数の制限はある。リツイートも投稿としてカウントされる)
+  POST statuses/update_with_media        制限なし (このAPIの実行回数自体の制限はないが、1ユーザー辺りの投稿数の制限はある。1回のAPIで投稿可能な画像の大きさ、枚数の制限、1日辺りの最大投稿可能容量の制限もある)
+  GET statuses/oembed                   180回/user, 180回/application
+  GET statuses/retweeters/ids            15回/user,  60回/application
+
+Search
+  GET search/tweets                     180回/user, 450回/application
+
+Streaming
+  POST statuses/filter                  アクセスレベルによって異なる。デフォルトのアクセスレベルでは、最大400キーワード、最大5000ユーザー、最大25箇所の地点の追跡を要求できる
+  GET statuses/sample                   アクセスレベルによって(サンプリングレートが)異なる
+  GET statuses/firehose                 このAPIを使うには特別な許可が必要。複数のアクセスレベルが用意されている
+  GET user                              制限あり
+  GET site                              制限あり
+
+Direct Messages
+  GET direct_messages            15回
+  GET direct_messages/sent       15回
+  GET direct_messages/show       15回
+  POST direct_messages/destroy   制限なし
+  POST direct_messages/new       制限なし (ただし、あまりにも頻繁に使用するとスパマーと判定されて、アカウントを凍結される可能性あり)
+
+Friends & Followers
+  GET friendships/no_retweets/ids          15回
+  GET friends/ids                          15回/user, 15回/application
+  GET followers/ids                        15回/user, 15回/application
+  GET friendships/lookup                   15回
+  GET friendships/incoming                 15回
+  GET friendships/outgoing                 15回
+  POST friendships/create                  制限なし (ただし、あまりにも頻繁に使用するとスパマーと判定されて、アカウントを凍結される可能性あり)
+  POST friendships/destroy                 制限なし
+  POST friendships/update                  制限なし
+  GET friendships/show                    180回/user, 15回/application
+  GET friends/list                         15回/user, 15回/application
+  GET followers/list                       15回/user, 15回/application
+
+Users
+  GET account/settings                           15回
+  GET account/verify_credentials                 15回
+  POST account/settings                          制限なし
+  POST account/update_delivery_device            制限あり
+  POST account/update_profile                    制限あり
+  POST account/update_profile_background_image   制限あり (画像のサイズは最大800KB。2048ピクセルより大きな画像は縮小される)
+  POST account/update_profile_colors             制限あり (色は16進で3桁か6桁で表現する)
+  POST account/update_profile_image              制限あり (画像のサイズは最大700KB。500ピクセルより大きな画像は縮小される。アニメーションGIFの場合、最初の1コマ目のみを残し、残りのコマは捨てられる)
+  GET blocks/list                                15回
+  GET blocks/ids                                 15回
+  POST blocks/create                             制限あり
+  POST blocks/destroy                            制限あり
+  GET users/lookup                              180回/user,  60回/application
+  GET users/show                                180回/user, 180回/application
+  GET users/search                              180回
+  GET users/contributees                         15回
+  GET users/contributors                         15回
+  POST account/remove_profile_banner             制限なし
+  POST account/update_profile_banner             制限なし
+  GET users/profile_banner                      180回
+
+Suggested Users
+  GET users/suggestions/:slug                    15回/user,  15回/application
+  GET users/suggestions                          15回/user,  15回/application
+  GET users/suggestions/:slug/members            15回/user,  15回/application
+
+Favorites
+  GET favorites/list                         15回/user, 15回/application
+  POST favorites/destroy                     制限あり
+  POST favorites/create                      制限なし (「制限あり」の間違い?)
+
+Lists
+  GET lists/list                             15回/user,  15回/application
+  GET lists/statuses                        180回/user, 180回/application (当初15回/userだったのが、緩和された)
+  POST lists/members/destroy                 制限あり (自分が作成したリストに対してのみ実行できる)
+  GET lists/memberships                      15回/user,  15回/application
+  GET lists/subscribers                     180回/user,  15回/application
+  POST lists/subscribers/create              制限あり
+  GET lists/subscribers/show                 15回/user,  15回/application
+  POST lists/subscribers/destroy             制限あり
+  POST lists/members/create_all              制限あり (1リスト辺りの上限は500メンバー。API1回の実行につき、最大100メンバーまで追加できる)
+  GET lists/members/show                     15回/user,  15回/application
+  GET lists/members                         180回/user,  15回/application
+  POST lists/members/create                  制限あり (1リスト辺りの上限は500メンバー)
+  POST lists/destroy                         制限あり (自分が作成したリストに対してのみ実行できる)
+  POST lists/update                          制限あり (自分が作成したリストに対してのみ実行できる)
+  POST lists/create                          制限あり (作成できるリストは1ユーザーにつき20個まで)
+  GET lists/show                             15回/user,  15回/application
+  GET lists/subscriptions                    15回/user,  15回/application
+  POST lists/members/destroy_all             制限あり (API1回の実行につき、最大100メンバーを削除できる)
+  GET lists/ownerships                       15回/user,  15回/application
+
+Saved Searches
+  GET saved_searches/list                    15回
+  GET saved_searches/show/:id                制限なし
+  POST saved_searches/create                 制限なし (登録できる検索条件は1ユーザーにつき25件まで)
+  POST saved_searches/destroy/:id            制限あり (「制限なし」の間違い?)
+
+Places & Geo
+  GET geo/id/:place_id                      15回
+  GET geo/reverse_geocode                   15回
+  GET geo/search                            15回
+  GET geo/similar_places                    15回
+  POST geo/place                            制限あり (このAPIでいちばん最後に投稿したものだけが GET geo/similar_places の検索対象となる)
+
+Trends
+  GET trends/place                          15回/user, 15回/application
+  GET trends/available                      15回/user, 15回/application
+  GET trends/closest                        15回/user, 15回/application
+
+Spam Reporting
+  POST users/report_spam                    制限あり
+
+OAuth
+  GET oauth/authenticate                    制限なし
+  GET oauth/authorize                       制限なし
+  POST oauth/access_token                   制限なし
+  POST oauth/request_token                  制限なし
+  POST oauth2/token                         制限なし
+  POST oauth2/invalidate_token              制限なし
+
+Help
+  GET help/configuration                   15回/user,  15回/application (1日1回しか使わないようにすることを強く推奨)
+  GET help/languages                       15回/user,  15回/application
+  GET help/privacy                         15回/user,  15回/application
+  GET help/tos                             15回/user,  15回/application
+  GET application/rate_limit_status       180回/user, 180回/application
