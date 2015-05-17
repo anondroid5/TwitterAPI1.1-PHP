@@ -29,5 +29,8 @@ hashtag.php - ハッシュタグを指定したtweetの検索
 
 search.php　- 単語をクエリとしたtweetの検索
 
+#Author
+Fumihiko Akagi
+
 #Copyright
 MIT
