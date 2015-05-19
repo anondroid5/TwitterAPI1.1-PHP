@@ -45,4 +45,4 @@ UserStream.php - UserStream
 Fumihiko Akagi
 
 #Copyright
-MIT
+The MIT License
