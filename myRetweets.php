@@ -2,6 +2,10 @@
 //twitteroauth.phpをinclude
 require_once("./twitteroauth/twitteroauth.php");
 //取得した各キーを入力
+$consumer_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$consumer_secret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$access_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$access_token_secret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 // OAuthオブジェクト生成
 $to = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
 // user_timelineの取得。
@@ -27,4 +31,3 @@ foreach($results as $value){
 }
 echo '</ul>';
 ?>
-
