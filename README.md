@@ -29,6 +29,10 @@ hashtag.php - ハッシュタグを指定したtweetの検索
 
 search.php　- 単語をクエリとしたtweetの検索
 
+###ReTweet
+
+myRetweets.php - Retweet情報を取得
+
 #Author
 Fumihiko Akagi
 
