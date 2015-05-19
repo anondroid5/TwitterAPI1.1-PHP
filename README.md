@@ -1,7 +1,7 @@
 # TwitterAPI
 version1.1
 
-#Detail
+#Details
 
 ###Follower
 
