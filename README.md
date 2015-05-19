@@ -33,6 +33,10 @@ search.php　- 単語をクエリとしたtweetの検索
 
 myRetweets.php - Retweet情報を取得
 
+###Stream
+
+UserStream.php - UserStream
+
 #Author
 Fumihiko Akagi
 
