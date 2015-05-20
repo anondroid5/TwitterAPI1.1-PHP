@@ -47,7 +47,7 @@ Fumihiko Akagi
 #Copyright
     The MIT License
 
-    Copyright (c) 2013 Dennis Hotson
+    Copyright (c) 2013 Fumihiko Akagi
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this
     software and associateddocumentation files (the "Software"), to deal in the Software
