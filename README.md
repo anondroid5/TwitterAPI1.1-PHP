@@ -1,4 +1,5 @@
 # TwitterAPI
+[![Language](http://img.shields.io/badge/language-php-orange.svg?style=flat)](http://php.net)
 [![Api](https://img.shields.io/badge/api-v1.1-blue.svg?style=flat)](https://dev.twitter.com/rest/public)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://opensource.org/licenses/MIT)
 
