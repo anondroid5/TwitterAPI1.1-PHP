@@ -43,12 +43,12 @@ statusesshowid.php - StatusID(TweetのID)を指定してユーザの情報を取
 UserStream.php - UserStream
 
 #Author
-Fumihiko Akagi
+Fumihiko Akaki
 
 #Copyright
     The MIT License
 
-    Copyright (c) 2013 Fumihiko Akagi
+    Copyright (c) 2013 Fumihiko Akaki
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this
     software and associateddocumentation files (the "Software"), to deal in the Software
